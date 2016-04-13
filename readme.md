@@ -7,10 +7,6 @@ It's ready for multilingual sites too! Each page file is locked individually. No
 
 [![Preview of the Page Lock Plugin for Kirby CMS](https://raw.githubusercontent.com/pedroborges/kirby-pagelock/master/preview.gif)](https://github.com/pedroborges/kirby-pagelock)
 
-## Requirements
-- Kirby 2.2 or above
-- PHP 5.4 or above
-
 ## Installation
 
 ### Download
@@ -50,12 +46,27 @@ That's it! Multilingual support works out of the box.
 
 > When using Git, make sure to add the following rule to your `.gitignore` file: `.lock*`
 
+## Option
+
+The following option can be set in your `/site/config/config.php`:
+
+### fields.pagelock.time
+
+    // Default: 8 seconds
+    c::set('fields.pagelock.time', 8);
+
+As soon as you open a page, Page Lock Plugin verifies if it's locked or not. In case it isn't, the page is locked and the plugin keeps pinging the server to inform you are not done editing yet. If it's been locked, then we want to know when it unlocks. This setting changes the frequency those pings happen.
+
 ## Issues and Feedback
 If you have a Github account, please report issues directly on Github:
 
 <https://github.com/pedroborges/kirby-pagelock/issues>
 
 Otherwise you can send me an email: oi@pedroborg.es
+
+## Requirements
+- Kirby 2.2.3+
+- PHP 5.4+
 
 ## Buy a License
 Please keep in mind that I develop this plugin with passion in my spare time. Few free to try it on your local machine or on a private test server. Once your project goes live, get a license and support further development of this and future plugins for Kirby CMS.
