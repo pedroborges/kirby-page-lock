@@ -1,5 +1,5 @@
 # Page Lock Plugin for Kirby CMS
-[![Release](https://img.shields.io/github/release/pedroborges/kirby-pagelock.svg)](https://github.com/pedroborges/kirby-pagelock/releases) [![Issues](https://img.shields.io/github/issues/pedroborges/kirby-pagelock.svg)](https://github.com/pedroborges/kirby-pagelock/issues) [![Buy a Non-Commercial License](https://img.shields.io/badge/buy-personal_license-green.svg)](https://www.paypal.com/cgi-bin/webscr?&amp;cmd=_xclick&amp;business=oi@pedroborg.es&amp;currency_code=USD&amp;amount=14&amp;item_name=Page Lock Plugin for Kirby CMS Non-Commercial License) [![Buy a Commercial License](https://img.shields.io/badge/buy-commercial_license-green.svg)](https://www.paypal.com/cgi-bin/webscr?&amp;cmd=_xclick&amp;business=oi@pedroborg.es&amp;currency_code=USD&amp;amount=39&amp;item_name=Page Lock Plugin for Kirby CMS Commercial License)
+[![Release](https://img.shields.io/github/release/pedroborges/kirby-pagelock.svg)](https://github.com/pedroborges/kirby-pagelock/releases) [![Issues](https://img.shields.io/github/issues/pedroborges/kirby-pagelock.svg)](https://github.com/pedroborges/kirby-pagelock/issues) [![Buy a Non-Commercial License](https://img.shields.io/badge/buy-noncommercial_license-green.svg)](https://www.paypal.com/cgi-bin/webscr?&amp;cmd=_xclick&amp;business=oi@pedroborg.es&amp;currency_code=USD&amp;amount=14&amp;item_name=Page Lock Plugin for Kirby CMS Non-Commercial License) [![Buy a Commercial License](https://img.shields.io/badge/buy-commercial_license-green.svg)](https://www.paypal.com/cgi-bin/webscr?&amp;cmd=_xclick&amp;business=oi@pedroborg.es&amp;currency_code=USD&amp;amount=39&amp;item_name=Page Lock Plugin for Kirby CMS Commercial License)
 
 This robust plugin for [Kirby CMS](https://getkirby.com) locks a page in the panel as soon as you open it to prevent other users from editing it. Content loss no more!
 
@@ -17,7 +17,7 @@ It's ready for multilingual sites too! Each page file is locked individually. No
 [Download the files](https://github.com/pedroborges/kirby-pagelock/archive/master.zip) and put them in a folder named `pagelock`, inside `site/fields`. Create the `fields` folder if it doesn't exist.
 
 ### Kirby CLI
-[Kirby's command line interface](https://github.com/getkirby/cli) makes installing Page Lock Plugin a breeze:
+Kirby's [command line interface](https://github.com/getkirby/cli) makes installing Page Lock Plugin a breeze:
 
     $ kirby plugin:install pedroborges/kirby-pagelock
 
@@ -39,16 +39,18 @@ Updating is as easy as running a few commands.
     $ git commit -a -m "Update submodules"
     $ git submodule update --init --recursive
 
-> You'll also want to add `.lock*` to the `.gitignore` file.
-
-## How to use it
+## How To
 Add the following field to **each** [blueprint](https://getkirby.com/docs/panel/blueprints) you want to enable the lock feature:
 
     fields:
       pagelock:
         type: pagelock
 
-## Issues and feedback
+That's it! Multilingual support works out of the box.
+
+> When using Git, make sure to add the following rule to your `.gitignore` file: `.lock*`
+
+## Issues and Feedback
 If you have a Github account, please report issues directly on Github:
 
 <https://github.com/pedroborges/kirby-pagelock/issues>
