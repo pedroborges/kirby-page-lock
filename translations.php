@@ -1,6 +1,10 @@
 <?php
 
 return [
+    "de" => [
+      "editing" => "<strong>%s</strong> bearbeitet diese Seite gerade.",
+      "stay"    => "Sie werden auf dieser Seite benachrichtigt sobald die Bearbeitung wieder möglich ist.",
+    ],
     "en" => [
       "editing" => "<strong>%s</strong> is editing this page.",
       "stay"    => "Stay here to be notified when it's your turn.",
