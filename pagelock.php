@@ -21,12 +21,11 @@ class PagelockField extends BaseField {
   protected $pingTime;
 
   /**
-   * Default message displayed to end user.
+   * Localized strings.
    *
-   * @var string
+   * @var array
    */
-  protected $message = "<strong>%s</strong> is editing this page.
-    <br><br>Stay here to be notified when it's your turn.";
+  protected $translations;
 
   /**
    * Panel assets.
@@ -45,7 +44,8 @@ class PagelockField extends BaseField {
    * @return null
    */
   public function __construct() {
-    $this->pingTime = c::get('fields.pagelock.time', 8); // seconds
+    $this->pingTime     = c::get('fields.pagelock.time', 8); // seconds
+    $this->translations = $this->i18n(require(__DIR__ . DS . 'translations.php'));
   }
 
   /**
@@ -110,7 +110,9 @@ class PagelockField extends BaseField {
    */
   protected function message() {
     $editor  = $this->editor();
-    $message = l::get('fields.pagelock.message', $this->message);
+    $editingMessage = $this->translations['editing'];
+    $stayMessage    = $this->translations['stay'];
+    $message        = $editingMessage . '<br><br>' . $stayMessage;
 
     return sprintf($message, $editor);
   }
