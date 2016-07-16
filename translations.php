@@ -13,6 +13,10 @@ return [
       "editing" => "<strong>%s</strong> está editando esta página.",
       "stay"    => "Permanezca aquí para se le notifique cuando sea su turno.",
     ],
+    "fr" => [
+      "editing" => "<strong>%s</strong> est en train d’éditer cette page.",
+      "stay"    => "Vous pouvez rester sur cette page pour être notifé lorsqu’elle sera libérée",
+    ],
     "pt_BR" => [
       "editing" => "<strong>%s</strong> está editando esta página.",
       "stay"    => "Aguarde aqui e você será notificado quando ele (a) terminar.",
@@ -20,5 +24,5 @@ return [
     "pt_PT" => [
       "editing" => "<strong>%s</strong> está editando esta página.",
       "stay"    => "Aguarde aqui e você será notificado quando ele (a) terminar.",
-    ],
+    ]
 ];
