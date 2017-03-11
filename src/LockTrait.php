@@ -25,7 +25,7 @@ trait LockTrait
     {
         return [
             'field' => 'lock',
-            'state' => json_encode($this->pageLock()->scriptState())
+            'state' => json_encode($this->pageLock()->state())
         ];
     }
 

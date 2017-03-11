@@ -120,11 +120,11 @@
         getUrl: function(action) {
             var base = window.location.origin + '/page-lock/' + action,
             language = this.state.language ? '&language=' + this.state.language : '',
-            unique = this.state.unique ? '&unique=' + this.state.unique : ''
+            uniqueId = this.state.uniqueId ? '&uniqueId=' + this.state.uniqueId : ''
 
             if (this.isPanel()) this.updateUrl()
 
-            return base + '?page=' + this.state.page + language + unique
+            return base + '?page=' + this.state.page + language + uniqueId
         }
 
     })

@@ -4,8 +4,8 @@ kirby()->set('route', [
     'pattern' => 'page-lock/lock',
     'method'  => 'POST',
     'action'  => function () {
-        $unique = get('unique') ?: null;
-        $pageLock = pageLock(get('page'), $unique);
+        $uniqueId = get('uniqueId') ?: null;
+        $pageLock = pageLock(get('page'), $uniqueId);
         $isLocked = $pageLock->lock();
 
         return response::json($pageLock->state([
@@ -18,8 +18,8 @@ kirby()->set('route', [
     'pattern' => 'page-lock/status',
     'method'  => 'GET',
     'action'  => function () {
-        $unique = get('unique') ?: null;
-        $pageLock = pageLock(get('page'), $unique);
+        $uniqueId = get('uniqueId') ?: null;
+        $pageLock = pageLock(get('page'), $uniqueId);
 
         return response::json($pageLock->state());
     }

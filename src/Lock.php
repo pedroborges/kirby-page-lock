@@ -16,9 +16,9 @@ class Lock
     protected $pingInterval;
     protected $root;
     protected $translations;
-    protected $unique;
+    protected $uniqueId;
 
-    public function __construct($page, $unique = null)
+    public function __construct($page, $uniqueId = null)
     {
         if (! is_a($page, 'Page')) {
             $id = $page;
@@ -32,7 +32,7 @@ class Lock
         $this->pingInterval = c::get('page-lock.interval', 10);
         $this->translations = require __DIR__ . DS . 'translations.php';
         $this->root = kirby()->roots()->plugins() . DS . 'page-lock';
-        $this->unique = $unique;
+        $this->uniqueId = $uniqueId;
 
         static::$instance = $this;
     }
@@ -43,10 +43,10 @@ class Lock
      * @param  \Page|string  $page
      * @return  Lock
      */
-    public static function instance($page = null, $unique = null)
+    public static function instance($page = null, $uniqueId = null)
     {
         return static::$instance = is_null(static::$instance)
-            ? new static($page, $unique)
+            ? new static($page, $uniqueId)
             : static::$instance;
     }
 
@@ -217,7 +217,7 @@ class Lock
             'language' => $language,
             'page' => $this->page()->id(),
             'pingInterval' => $this->pingInterval * 1000,
-            'unique' => null
+            'uniqueId' => null
         ], $override);
     }
 
@@ -275,8 +275,8 @@ class Lock
             $key .= $lang;
         }
 
-        if (! is_null($this->unique)) {
-            $key .= $this->unique;
+        if (! is_null($this->uniqueId)) {
+            $key .= $this->uniqueId;
         }
 
         return md5($key);
