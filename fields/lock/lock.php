@@ -5,6 +5,17 @@ class LockField extends BaseField
     use PedroBorges\PageLock\LockTrait;
 
     /**
+     * Panel assets.
+     *
+     * @var array
+     */
+    static public $assets = [
+        'js' => [
+            'lock.js'
+        ]
+    ];
+
+    /**
      * Build field template.
      *
      * @return string
