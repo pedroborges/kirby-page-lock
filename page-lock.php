@@ -16,3 +16,8 @@ if (site()->user()) {
 kirby()->set('field', 'lock', __DIR__ . DS . 'fields' . DS . 'lock');
 kirby()->set('field', 'title', __DIR__ . DS . 'fields' . DS . 'title');
 
+kirby()->set(
+    'blueprint',
+    'fields/lock', __DIR__ . DS . 'blueprints' . DS . 'fields' . DS . 'lock.yml'
+);
+
