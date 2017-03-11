@@ -21,3 +21,5 @@ kirby()->set(
     'fields/lock', __DIR__ . DS . 'blueprints' . DS . 'fields' . DS . 'lock.yml'
 );
 
+kirby()->set('snippet', 'page-lock', __DIR__ . DS . 'snippets' . DS . 'page-lock.php');
+
