@@ -23,3 +23,14 @@ kirby()->set(
 
 kirby()->set('snippet', 'page-lock', __DIR__ . DS . 'snippets' . DS . 'page-lock.php');
 
+kirby()->set('page::method', 'isLocked', function($page, $unique = null) {
+    return pageLock($page, $unique)->isLocked();
+});
+
+kirby()->set('page::method', 'isNotLocked', function($page, $unique = null) {
+    return pageLock($page, $unique)->isNotLocked();
+});
+
+kirby()->set('page::method', 'pageLock', function($page, $unique = null) {
+    return pageLock($page, $unique);
+});
