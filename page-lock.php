@@ -9,4 +9,8 @@ function pageLock($page, $unique = null) {
     return PedroBorges\PageLock\Lock::instance($page, $unique);
 }
 
+if (site()->user()) {
+    require __DIR__ . DS . 'src' . DS . 'routes.php';
+}
+
 kirby()->set('field', 'lock', __DIR__ . DS . 'fields' . DS . 'lock');
