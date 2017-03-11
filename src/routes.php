@@ -8,7 +8,7 @@ kirby()->set('route', [
         $pageLock = pageLock(get('page'), $unique);
         $isLocked = $pageLock->lock();
 
-        return response::json($pageLock->scriptState([
+        return response::json($pageLock->state([
             'isLocked' => $isLocked
         ]));
     }
@@ -21,6 +21,6 @@ kirby()->set('route', [
         $unique = get('unique') ?: null;
         $pageLock = pageLock(get('page'), $unique);
 
-        return response::json($pageLock->scriptState());
+        return response::json($pageLock->state());
     }
 ]);
