@@ -14,3 +14,5 @@ if (site()->user()) {
 }
 
 kirby()->set('field', 'lock', __DIR__ . DS . 'fields' . DS . 'lock');
+kirby()->set('field', 'title', __DIR__ . DS . 'fields' . DS . 'title');
+
