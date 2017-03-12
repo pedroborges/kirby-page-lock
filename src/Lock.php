@@ -305,6 +305,8 @@ class Lock
      */
     protected function writeData($data = [])
     {
+        $this->removeOldData();
+
         $rawData = array_merge($this->data(), $data);
         $jsonData = json_encode($rawData);
 
@@ -313,6 +315,27 @@ class Lock
             $jsonData,
             LOCK_EX
         ) ? true : false;
+    }
+
+    /**
+    * Remove old data daily.
+    *
+    * @return  void
+    */
+    protected function removeOldData() {
+        if (! key_exists('flushed_at', $this->data())) {
+            $this->data['flushed_at'] = time();
+        } elseif (time() - $this->data['flushed_at'] > 86400) {
+            foreach ($this->data as $key => $value) {
+                if ($key === 'flushed_at') continue;
+
+                if (time() - $value['locked_at'] > $this->pingInterval) {
+                    unset($this->data[$key]);
+                }
+            }
+
+            $this->data['flushed_at'] = time();
+        }
     }
 
     /**
