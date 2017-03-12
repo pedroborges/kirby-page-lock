@@ -59,25 +59,47 @@
         },
 
         disableForm: function() {
+            var form = $('.mainbar .form')
+
             // Remove slug link
-            $('.field-name-title .field-help a').parent().remove()
+            form.find('.field-name-title .field-help a')
+                .contents()
+                .unwrap()
+                .wrap('<span style="padding-left:.5em"></span>')
 
             // Disable all form inputs from main area
-            $('.mainbar :input').prop('disabled', true)
+            form.find('.field').addClass('field-is-readonly field-is-disabled')
+            form.find('.field :input').prop('readonly', true).prop('disabled', true)
+
+            // Disable textarea buttons
+            form.find('.field-buttons').remove()
 
             // Disable keyboard shortcuts
             $(document).off('keydown')
 
-            // Remove 'Save' button
-            $('.main .form [type=submit]').remove()
+            // Remove 'Save' and 'Discard' button
+            form.find('.buttons.buttons-centered, :submit').remove()
 
-            // Remove 'Save' button
-            $('.main .form [data-modal]').remove()
+            // Remove structure options
+            form.find('.structure-entry-options, .structure-table-options').remove()
+            form.find('.structure-entries [data-modal]')
+                .contents()
+                .unwrap()
+                .wrap('<span style="display:block;padding:.5em;overflow:hidden;text-overflow:ellipsis;"></span>')
 
-            // $('.main .form [data-sortable="true"]').removeProp('datasortable')
+            // Remove modal links
+            form.find('[data-modal]').remove()
 
             // Remove all action buttons except the 'Preview' one
             $('.sidebar-content .sidebar-list:first a:not([data-shortcut="p"])').parent().remove()
+
+            // Remove 'Files' from sidebar
+            var files = $('.sidebar-content .hgroup-title a[href$="files"]').parent().parent()
+            files.next().remove()
+            files.remove()
+
+            // Disable UI sorting
+            form.find('.ui-sortable, .structure-entries, .structure-table tbody').sortable({disabled: true})
         },
 
         displayLockMessage: function() {
