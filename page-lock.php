@@ -14,7 +14,10 @@ if (site()->user()) {
 }
 
 kirby()->set('field', 'lock', __DIR__ . DS . 'fields' . DS . 'lock');
-kirby()->set('field', 'title', __DIR__ . DS . 'fields' . DS . 'title');
+
+if (c::get('page-lock.title', true)) {
+    kirby()->set('field', 'title', __DIR__ . DS . 'fields' . DS . 'title');
+}
 
 kirby()->set(
     'blueprint',
