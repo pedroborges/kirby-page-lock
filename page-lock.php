@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Kirby Page Lock Plugin
+ *
+ * @version   1.0.0-beta.1
+ * @author    Pedro Borges <oi@pedroborg.es>
+ * @copyright Pedro Borges <oi@pedroborg.es>
+ * @link      https://github.com/pedroborges/kirby-page-lock
+ * @license   MIT
+ */
+
 load([
     'pedroborges\\pagelock\\lock' => __DIR__ . DS . 'src' . DS . 'Lock.php',
     'pedroborges\\pagelock\\locktrait' => __DIR__ . DS . 'src' . DS . 'LockTrait.php'

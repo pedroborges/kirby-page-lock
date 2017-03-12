@@ -1,8 +1,8 @@
 {
-  "name": "pagelock",
-  "author": "Pedro Borges",
-  "version": "0.1.0",
-  "description": "A Kirby CMS plugin that locks a page preventing it from being edited by two users at the same time.",
-  "type": "kirby-field",
-  "license": "https://github.com/pedroborges/kirby-pagelock/blob/master/license.md"
+  "name": "page-lock",
+  "author": "Pedro Borges <oi@pedroborg.es>",
+  "version": "1.0.0-beta.1",
+  "description": "Kirby Page Lock",
+  "type": "kirby-plugin",
+  "license": "MIT"
 }
