@@ -112,7 +112,7 @@ c::set('page-lock.title', true);
 First make sure there at least two registered users. In your browser, login into Kirby's Panel with `user1` then navigate to a page that either has a `title` or `lock` field defined in the corresponding blueprint. Login with `user2` using a private window or another browser then open the same page. You should see a red box saying: _user1 is editing this page._
 
 ## Change Log
-All notable changes to this project will be documented at: <https://github.com/pedroborges/kirby-page-lock/blob/master/changelog.md>
+All notable changes to this project will be documented at: <https://github.com/pedroborges/kirby-page-lock/blob/master/CHANGELOG.md>
 
 ## License
 Page Lock plugin is open-sourced software licensed under the [MIT license](http://www.opensource.org/licenses/mit-license.php).
