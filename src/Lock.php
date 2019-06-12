@@ -11,7 +11,7 @@ class Lock
 {
     protected static $instance = null;
 
-    protected $data;
+    protected $data = [];
     protected $page;
     protected $pingInterval;
     protected $root;
